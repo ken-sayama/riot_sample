@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Riot todo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <script src="riot.compiler.min.js" charset="utf-8"></script> -->
+  </head>
+  <body>
+    <test></test>
+
+    <!-- タグの定義 -->
+    <script type="riot/tag">
+      <test>
+        <div each='{lists}'>
+          <h1>{name}</h1>
+          <p>{description}</p>
+          <p>{memo}</p>
+          <button onclick='{b_click}'>ボタン</button>
+        </div>
+      </test>
+
+      this.lists = [
+        {name: '佐山', description: '25才', memo: 'メモメモ'},
+        {name: '山崎', description: '23才', memo: 'ほげほげ'}
+      ]
+      this.b_click = function(e){
+        console.log(e);
+
+      }
+    </script>
+    <script src="riot.compiler.min.js" charset="utf-8"></script>
+    <script>
+      // マウント
+      riot.mount('test');
+    </script>
+
+  </body>
+</html>
